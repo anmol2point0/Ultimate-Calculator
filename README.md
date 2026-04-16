@@ -11,8 +11,6 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Discord-11k_online-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="#"><img src="https://img.shields.io/badge/github_downloads-16M-2ea44f?style=flat-square&logo=github&logoColor=white" alt="Downloads"></a>
   <a href="#"><img src="https://img.shields.io/badge/build-passing-success?style=flat-square" alt="Build passing"></a>
   <a href="#"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License"></a>
 </p>
