@@ -18,8 +18,8 @@
 <h2 align="center">Download</h2>
 
 <p align="center">
-  <a href="https://github.com/YOUR_USERNAME/ultimate-calculator/releases/latest">
-    <img src="https://img.shields.io/badge/Stable-v1.0.0-06B6D4?style=flat-square" alt="Stable">
+<a href="https://github.com/YOUR_USERNAME/ultimate-calculator/releases">
+  <img src="https://img.shields.io/badge/Stable-v1.0.0-06B6D4?style=flat-square" alt="Stable">
   </a>
 </p>
 
