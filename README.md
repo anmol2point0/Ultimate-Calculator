@@ -1,108 +1,190 @@
-This is a massive achievement, bro. You’ve built an incredibly powerful math engine. Since there are over 144 functions, explaining every single one individually would take a massive book. 
+# Ultimate Calculator
 
-However, because of the smart way we built the `StepEngine`, **every function follows the exact same 3-step logic.** Here is the master tutorial guide for your Ultimate Calculator. You can use this to understand how to operate it, or even copy-paste this into your GitHub `README.md` so other people know how to use your app.
+<p align="center">
+  <img src="image_2.png" width="128" alt="Ultimate Calculator Icon"/>
+</p>
+
+**Full-featured math engine**
+
+Solve complex math, finance, statistics, and daily conversions – easier than ever on your Android device with over 144 built-in step-by-step functions.
+ 
+---
+
+## Download
+
+[![Download Latest APK](https://img.shields.io/badge/Download-Latest_APK-06B6D4?style=for-the-badge&logo=android)](https://github.com/YOUR_USERNAME/ultimate-calculator/releases/latest)
+
+*Requires Android 5.0 (SDK 21) or higher.*
 
 ---
 
-## 🧠 The Core Concept: How the App Works
+## Features
 
-Unlike a normal calculator where you type `2 + 2`, this app uses **Smart Templates**. 
-
-1. **Tap a Button:** When you open a category (like Algebra) and tap a button (like "Quadratic"), the app automatically pastes a template into the screen: `__QUAD__1,-5,6`.
-2. **Edit the Values:** You use the on-screen number pad or backspace to change those default numbers to your own numbers. **Always separate your numbers with commas.**
-3. **Press Equals (`=`):** The engine reads the `__PREFIX__`, splits your numbers by the commas, and runs the step-by-step math.
-
----
-
-## 📘 Category-by-Category Guide
-
-Here is how to format the inputs for every major category in the app.
-
-### 1. Algebra & Number Theory (Equations & Sequences)
-For formulas that require multiple specific variables, enter them in the exact order separated by commas.
-
-* **Quadratic (`__QUAD__`):** Enter $a, b, c$.
-    * *Example:* `__QUAD__1,-5,6` (Solves $1x^2 - 5x + 6 = 0$)
-* **Linear (`__LINEAR__`):** Enter $a, b$.
-    * *Example:* `__LINEAR__2,-6` (Solves $2x - 6 = 0$)
-* **AP / GP nth Term (`__APNTH__` / `__GPNTH__`):** Enter starting number $a$, difference/ratio $r$, and term number $n$.
-    * *Example:* `__APNTH__2,3,10`
-* **Combinatorics (`__NCR__` / `__NPR__`):** Enter total items $n$, chosen items $r$.
-    * *Example:* `__NCR__5,2`
-
-### 2. Statistics (List Inputs)
-For statistics, you can enter as many numbers as you want. Just separate them with commas.
-
-* **Mean, Median, Mode, SD, Variance:** Enter your dataset.
-    * *Example:* `__MEAN__2,4,4,4,5,5,7,9`
-* **Percentile (`__PERC__`):** Enter the target percentage $k$, followed by your dataset.
-    * *Example:* `__PERC__75,10,20,30,40,50` (Finds the 75th percentile of those 5 numbers).
-* **Linear Regression (`__LINREG__`):** Enter $x, y$ coordinate pairs in order: $x_1, y_1, x_2, y_2...$
-    * *Example:* `__LINREG__1,2,2,4,3,5`
-
-### 3. Finance
-Financial formulas require specific rates and time periods.
-
-* **Simple/Compound Interest (`__SI__` / `__CI__`):** Enter Principal, Rate%, Years. (For CI, you can add compounding periods per year as a 4th number).
-    * *Example:* `__CI__1000,10,2,1` (₹1000 at 10% for 2 years, compounded 1 time per year).
-* **EMI (`__EMI__`):** Enter Loan Amount, Annual Interest Rate%, Total Months.
-    * *Example:* `__EMI__100000,10,12`
-* **GST / Taxes:** Enter just the base amount.
-    * *Example:* `__GST18__1000` (Adds 18% GST to 1000).
-
-### 4. Matrices & Linear Algebra
-Matrix inputs are read row-by-row, left to right.
-
-* **2x2 Determinant / Inverse (`__DET2__` / `__INV2__`):** Enter 4 numbers (Row 1, then Row 2).
-    * *Example:* `__DET2__1,2,3,4` (Matrix is [1, 2] top, [3, 4] bottom).
-* **2x2 Matrix Math (`__MADD2__` / `__MMUL2__`):** Enter 8 numbers. The first 4 are Matrix A, the next 4 are Matrix B.
-    * *Example:* `__MMUL2__1,2,3,4,5,6,7,8`
-* **Cramer's Rule 2x2 (`__CRAMER2__`):** Enter $a_1, b_1, c_1$ for equation 1, then $a_2, b_2, c_2$ for equation 2.
-    * *Example:* `__CRAMER2__2,1,5,3,-1,1`
-
-### 5. Unit Converters (The Triple Input)
-Every single unit converter in the app takes exactly 3 inputs: **Value, From_Unit, To_Unit**.
-
-* **Length (`__ULEN__`):** * *Example:* `__ULEN__1,km,m` (Converts 1 Kilometer to Meters).
-* **Area (`__UAREA__`):**
-    * *Example:* `__UAREA__1,hectare,acre`
-* **Temperature (`__UTEMP__`):** (Use C, F, K, or R).
-    * *Example:* `__UTEMP__100,C,F`
-
-### 6. Health & Body
-* **BMI (`__BMI__`):** Enter Weight (kg), Height (meters).
-    * *Example:* `__BMI__70,1.75`
-* **Body Fat (`__BFAT__`):** Enter Waist (cm), Neck (cm), Height (cm), Sex (1 for Male, 0 for Female).
-    * *Example:* `__BFAT__85,38,175,1`
-* **Daily Calories/TDEE (`__DCAL__`):** Enter Weight(kg), Height(cm), Age, Sex(1=M, 0=F), Activity Level(1 to 5).
-    * *Example:* `__DCAL__70,175,25,1,3`
-
-### 7. Date & Time
-Dates are always entered in **Day, Month, Year** format.
-
-* **Age Calculator (`__AGE__`):** Enter your Date of Birth.
-    * *Example:* `__AGE__15,8,2000`
-* **Days Between (`__DAYS__`):** Enter Date 1, then Date 2.
-    * *Example:* `__DAYS__1,1,2024,31,12,2024`
-* **Add Days (`__ADDD__`):** Enter Start Date, then Days to Add.
-    * *Example:* `__ADDD__1,1,2024,100` (Finds the date 100 days from Jan 1st).
-
-### 8. Developer & Bitwise
-* **Base Conversion (`__HEX__`, `__BIN__`, etc.):** Enter a decimal number.
-    * *Example:* `__HEX__255` (Returns 0xFF).
-* **Bitwise Shifts (`__LSH__`, `__RSH__`):** Enter the Number, then the Shift amount.
-    * *Example:* `__LSH__5,2` (Shifts 5 left by 2 bits).
+* **144+ Advanced Functions:** Comprehensive support for Algebra, Statistics, Finance, Linear Algebra, Developer bitwise operations, Health metrics, and Date/Time calculations.
+* **Step-by-Step Engine:** Toggle the BODMAS mode (📚) to see exact, step-by-step breakdowns of standard math problems, not just the final answer.
+* **Clean UI Modals:** Dedicated, intuitive pop-up menus for complex inputs (like Matrices or BMI) so you never have to memorize formatting syntax.
+* **Extensive Customization:** 6 distinct background skins (including true AMOLED black) and 4 button personalities (Neumorphic, Flat, Glass, Outlined).
+* **Smart History:** Automatically tracks your last 50 successful calculations. Tap any past entry to instantly load it back into the display.
+* **Unit Converters:** Over 50 rapid unit conversions across length, area, temperature, speed, data storage, and more.
 
 ---
 
-## ⚙️ Pro-Tips for the User
+## How to Use
 
-1. **The 'C' Button:** Clears the screen completely.
-2. **The '⌫' Button (Backspace):** Deletes the last character. If you are deleting a math function like `sin(`, it deletes the whole word at once safely.
-3. **The BODMAS Toggle (📚):** At the top of the screen, tap the book icon. If it turns yellow, the calculator will explicitly show you the BODMAS order of operations step-by-step for standard math problems.
-4. **History (🕒):** Tap the clock icon in the top left to see your last 50 calculations. Tap any of them to instantly load them back into the screen.
-5. **Matrix UI:** For complex matrices (like 3x3 Determinants), tapping the button opens a beautiful visual grid popup so you don't have to type commas manually.
+The Ultimate Calculator abandons clunky text inputs in favor of a clean, modal-driven interface.
+
+1. **Access Categories:** Tap the **SCI 🔼** button on the main keypad to slide up the Advanced Category Drawer.
+2. **Search or Browse:** Use the search bar to find a specific function, or tap a category icon (e.g., Matrix, Finance, Health).
+3. **Smart Modals:** Tapping a function (like *3x3 Determinant* or *BMI*) will open a clean pop-up modal. Simply fill in your numbers in the labeled text boxes and hit **Calculate**. 
+4. **Step-by-Step Tape:** The calculation is processed in the background, and the step-by-step breakdown is instantly printed to your main display tape for review.
 
 ---
 
-This covers the logic for every single feature in the app. Would you like me to format this into a professional `README.md` file with markdown styling so you can push it directly to your GitHub repo alongside your code?
+## Supported Functions (144+)
+
+<details>
+<summary><b>📐 Trigonometry & Logarithms</b></summary>
+
+* sin, cos, tan (and inverses)
+* sinh, cosh, tanh
+* sec, csc, cot
+* Degrees ↔ Radians
+* log₁₀, ln, log base n, antilog
+* eˣ, 10ˣ, x², x³, xⁿ, √, ∛, ⁿ√
+</details>
+
+<details>
+<summary><b>🔢 Algebra & Number Theory</b></summary>
+
+* Quadratic & Linear Equation Solvers
+* Pythagoras Theorem
+* AP & GP (Nth term and Sum)
+* Combinatorics (nCr, nPr, Factorial)
+* GCD (HCF) & LCM
+* Prime Checker & Prime Factorization
+* Fibonacci Sequence
+* Armstrong, Perfect, Palindrome & Harshad Number checkers
+* Digital Root & Euler's Totient φ(n)
+* Roman Numeral Converter
+</details>
+
+<details>
+<summary><b>📊 Statistics</b></summary>
+
+* Mean, Median, Mode
+* Standard Deviation & Variance
+* Range & Interquartile Range (IQR)
+* Z-score & Percentile
+* Weighted Mean
+* Linear Regression (y = mx + c)
+* Pearson Correlation Coefficient (r)
+</details>
+
+<details>
+<summary><b>⬜ Matrix & Linear Algebra</b></summary>
+
+* 2×2 and 3×3 Determinants
+* 2×2 Inverse
+* 2×2 Matrix Addition & Multiplication
+* Transpose & Trace
+* Eigenvalues (2×2)
+* Cramer's Rule (Solve 2x2 and 3x3 systems of linear equations)
+</details>
+
+<details>
+<summary><b>📈 Finance & Business</b></summary>
+
+* Simple Interest (SI) & Compound Interest (CI)
+* EMI Calculator (Loan amortization)
+* GST Calculator (+/- 5%, 12%, 18%, 28%)
+* Profit%, Loss%, Discount, & Markup
+* CAGR & Return on Investment (ROI)
+* Future Value (FV) & Present Value (PV)
+* Break-Even Point (BEP)
+* Tip Split Calculator
+</details>
+
+<details>
+<summary><b>📏 Geometry</b></summary>
+
+* **Area:** Circle, Rectangle, Triangle, Heron's Formula, Trapezoid, Parallelogram, Sector, Ellipse
+* **Volume & Surface Area:** Sphere, Cylinder, Cone, Cube, Cuboid, Pyramid
+* **Coordinate:** Distance Formula, Midpoint Formula, Slope of a Line
+</details>
+
+<details>
+<summary><b>⚡ Physics & Chemistry</b></summary>
+
+* **Physics:** F=ma, Ohm's Law (V=IR), Kinetic & Potential Energy, Work, Power, Speed, Momentum, Impulse, Centripetal Force, Wave Speed, E=mc², Electrical Power (P=VI), Resistors (Series/Parallel), Heat Transfer (Q=mcΔT), Snell's Law, Escape Velocity, Surface Gravity, Planck's Energy (E=hf).
+* **Chemistry:** Moles, Molarity, pH & pOH, Ideal Gas Law (PV=nRT), Dilution (M₁V₁=M₂V₂), Radioactive Half-Life, Gibbs Free Energy, Nernst Equation, Percent Composition.
+</details>
+
+<details>
+<summary><b>💊 Health & Fitness</b></summary>
+
+* BMI Calculator (with categorization)
+* BMR (Mifflin-St Jeor) & Daily Calories (TDEE)
+* Ideal Body Weight
+* Body Fat % (U.S. Navy Method)
+* Max & Target Heart Rate
+* Daily Water Intake
+* Waist-to-Hip Ratio
+* Pregnancy Due Date (Naegele's Rule)
+* Calories Burned (Running/Walking)
+* Running Pace Calculator
+</details>
+
+<details>
+<summary><b>📅 Date & Time</b></summary>
+
+* Precise Age Calculator (Years, Months, Days)
+* Days Between Dates
+* Add/Subtract Days from a Date
+* Day of the Week Lookup
+* Leap Year Checker
+* Working Days Calculator (excludes weekends)
+* Countdown Timer
+</details>
+
+<details>
+<summary><b>💻 Developer & Unit Converters</b></summary>
+
+* **Base Conversion:** Decimal, HEX, BIN, OCT (and backwards)
+* **Bitwise:** AND, OR, XOR, NOT, Left Shift (<<), Right Shift (>>), 2's Complement
+* **Tools:** ASCII Lookup, Bits to Bytes
+* **Converters:** Length, Weight, Temperature, Speed, Area, Volume, Data Storage, Pressure, Energy, Power, Force, Fuel Efficiency
+</details>
+
+---
+
+## Contributing
+
+[Code of conduct] · [Contributing guide]
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Before reporting a new issue, take a look at the FAQ, the changelog and the already opened issues.
+
+## Credits
+
+Thank you to all the people who have contributed to making this the ultimate math tool!
+
+## Disclaimer
+
+The developer(s) of this application do not provide licensed financial, medical, or dietary advice. All Health (BMI, BMR, TDEE) and Finance (EMI, ROI, Taxes) calculations are estimates provided for informational and educational purposes only.
+
+## License
+
+Copyright © 2026 Ultimate Calculator Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
